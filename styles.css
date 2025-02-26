@@ -87,7 +87,7 @@ section ul li:hover {
 }
 
 section ul li strong {
-    font-size: 18px; /* Setzt die Schriftgröße des hervorgehobenen Texts */
+    font-size: 16px; /* Setzt die Schriftgröße des hervorgehobenen Texts */
     color: #333; /* Setzt die Textfarbe des hervorgehobenen Texts */
 }
 
@@ -136,7 +136,7 @@ h2 {
 }
 
 h3 {
-    font-size: 18px; /* Setzt die Schriftgröße der h3-Überschrift */
+    font-size: 20px; /* Setzt die Schriftgröße der h3-Überschrift */
     color: #555; /* Setzt die Textfarbe der h3-Überschrift */
     display: flex; /* Setzt das Layout auf Flexbox */
     align-items: center; /* Zentriert die Elemente der h3-Überschrift vertikal */
