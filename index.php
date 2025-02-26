@@ -4,7 +4,7 @@
     <meta charset="UTF-8"> <!-- Zeichensatz auf UTF-8 setzen für Sonderzeichen -->
     <meta name="Felix Mocker" content="KÜ PR3_HFH" /> <!-- Autor und Inhalt der Seite -->
     <title>Tierfutter-Webshop - Produktsuche</title> <!-- Titel der Seite -->
-    <link rel="stylesheet" href="styles.css"> <!-- Externe CSS-Datei einbinden -->
+    <link rel="stylesheet" href="styles.css?v=1.0"> <!-- Externe CSS-Datei einbinden -->
 </head>
 <body>
     <header>
