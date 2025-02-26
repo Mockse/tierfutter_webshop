@@ -45,31 +45,34 @@
         <section>    
             <h2>Freitextsuche</h2> <!-- Bereich für die Freitextsuche -->
             <form method="GET" action="index.php"> <!-- Formular für die Freitextsuche -->
-                <input type="text" name="suche" placeholder="Hier Suchbegriff eingeben" value="<?php echo($suche); ?>"> <!-- Suchfeld -->
-                <!-- Sortieroptionen für die Freitextsuche -->
-                <label><input type="radio" name="sort_text" value="ASC" onchange="this.form.submit()" <?php echo ($sortierung == 'ASC') ? 'checked' : ''; ?>> Aufsteigend</label>
-                <label><input type="radio" name="sort_text" value="DESC" onchange="this.form.submit()" <?php echo ($sortierung == 'DESC') ? 'checked' : ''; ?>> Absteigend</label>
-                <button type="submit">Suchen</button> <!-- Suchbutton -->
+            <input type="text" name="suche" placeholder="Hier Suchbegriff eingeben" value="<?php echo($suche); ?>"> <!-- Suchfeld -->
+            <!-- Sortieroptionen für die Freitextsuche -->
+                <!-- onchange ist ein eventhandler, löst aus bei Wertänderung // 2. Teil prüft ob $sortierung = 'ASC' oder 'DESC' und setzt checked-Attribut -->
+            <label><input type="radio" name="sort_text" value="ASC" onchange="this.form.submit()" <?php echo ($sortierung == 'ASC') ? 'checked' : ''; ?>> Aufsteigend</label>
+            <label><input type="radio" name="sort_text" value="DESC" onchange="this.form.submit()" <?php echo ($sortierung == 'DESC') ? 'checked' : ''; ?>> Absteigend</label>
+            <button type="submit">Suchen</button> <!-- Suchbutton -->
             </form>
 
             <?php if (!empty($suche)) { ?>
-                <h3>Gefundene Produkte</h3> <!-- Überschrift für Ergebnisse -->
-                <!-- SQL-Abfrage für die Freitextsuche -->
-                <?php
-                $sql = "SELECT name, preis FROM Produkt WHERE name LIKE '%" . $suche . "%' ORDER BY preis $sortierung";
-                $result = $mysqli->query($sql);
-                ?>
-                <?php if ($result->num_rows > 0) { ?>
-                    <ul>
-                        <?php while ($row = $result->fetch_assoc()) { ?>
-                            <li><strong><?php echo($row['name']); ?></strong><?php echo number_format($row['preis'], 2, ',', '.'); ?> €</li>
-                        <?php } ?>
-                    </ul>
-                <?php } else { ?>
-                    <p>Keine Produkte gefunden.</p>
-                <?php }
-                //$result->free(); // Speicher für das Ergebnis freigeben
-                }?>
+            <h3>Gefundene Produkte</h3> <!-- Überschrift für Ergebnisse -->
+            <!-- SQL-Abfrage für die Freitextsuche -->
+            <?php
+            $sql = "SELECT name, preis FROM Produkt WHERE name LIKE '%" . $suche . "%' ORDER BY preis $sortierung";
+            $result = $mysqli->query($sql);
+            ?>
+            <?php if ($result->num_rows > 0) { ?>
+                <ul>
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <li><strong><?php echo($row['name']); ?></strong><?php echo number_format($row['preis'], 2, ',', '.'); ?> €</li>
+                <?php } ?>
+                </ul>
+                <p>Anzahl der gefundenen Produkte: <?php echo $result->num_rows; ?></p> <!-- Anzahl der gefundenen Produkte -->
+            <?php }
+            else { ?>
+                <p>Keine Produkte gefunden.</p>
+            <?php }
+            $result->free(); // Speicher für das Ergebnis freigeben
+            }?>
         </section>
 
         <hr> <!-- Horizontale Linie zur Trennung der Bereiche -->
@@ -77,11 +80,12 @@
         <section>
             <h2>Kategoriesuche</h2> <!-- Bereich für die Kategoriesuche -->
         <form method="GET" action="index.php">
-            <label for="kategorie">Kategorie:</label>
+            <label>Kategorie:</label>
             <select name="kategorie"> <!-- Dropdown für die Auswahl der Kategorie -->
-                <option value="" <?php echo ($kategorie == '') ? 'selected' : ''; ?>>--Alle--</option>
+                <!-- standardmäßig keine Kategorie ausgewählt -->
+            <option value="" <?php echo ($kategorie == '') ? 'selected' : ''; ?>>--Alle--</option> 
                 <?php
-                // Kategorien aus der Datenbank abrufen
+                // weitere Kategorien aus der Datenbank abrufen
                 $katAbfrage = "SELECT kategorie_id, kategorie FROM Produktkategorie";
                 $katResult = $mysqli->query($katAbfrage);
                 while ($kat = $katResult->fetch_assoc()): ?>
@@ -93,6 +97,7 @@
             </select>
 
             <!-- Sortieroptionen für die Kategoriesuche -->
+                <!-- onchange ist ein eventhandler, löst aus bei Wertänderung // 2. Teil prüft ob $sortierung = 'ASC' oder 'DESC' und setzt checked-Attribut -->
             <label><input type="radio" name="sort_category" value="ASC" onchange="this.form.submit()" <?php echo ($sortCat == 'ASC') ? 'checked' : ''; ?>> Aufsteigend</label>
             <label><input type="radio" name="sort_category" value="DESC" onchange="this.form.submit()" <?php echo ($sortCat == 'DESC') ? 'checked' : ''; ?>> Absteigend</label>
             <button type="submit">Suchen</button> <!-- Suchbutton -->
