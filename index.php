@@ -44,7 +44,7 @@
     <main>
         <section>    
             <h2>Freitextsuche</h2> <!-- Bereich für die Freitextsuche -->
-            <form method="GET" action="">
+            <form method="GET" action="index.php"> <!-- Formular für die Freitextsuche -->
                 <input type="text" name="suche" placeholder="Hier Suchbegriff eingeben" value="<?php echo($suche); ?>"> <!-- Suchfeld -->
                 <!-- Sortieroptionen für die Freitextsuche -->
                 <label><input type="radio" name="sort_text" value="ASC" onchange="this.form.submit()" <?php echo ($sortierung == 'ASC') ? 'checked' : ''; ?>> Aufsteigend</label>
@@ -76,7 +76,7 @@
         
         <section>
             <h2>Kategoriesuche</h2> <!-- Bereich für die Kategoriesuche -->
-        <form method="GET" action="">
+        <form method="GET" action="index.php">
             <label for="kategorie">Kategorie:</label>
             <select name="kategorie"> <!-- Dropdown für die Auswahl der Kategorie -->
                 <option value="" <?php echo ($kategorie == '') ? 'selected' : ''; ?>>--Alle--</option>
