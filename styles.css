@@ -55,7 +55,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fügt einen Schlagschatten zum Hauptbereich hinzu */
 }
 
-/* Ergebnisliste */
+/* Abschnitte */
 section {
     margin-top: 20px; /* Fügt Abstand oben hinzu */
     max-width: 600px; /* Setzt die maximale Breite des Abschnitts */
@@ -96,8 +96,8 @@ form {
     display: flex; /* Setzt das Layout auf Flexbox */
     flex-direction: column; /* Ordnet die Formularelemente in einer Spalte an */
     gap: 10px; /* Fügt Abstand zwischen den Formularelementen hinzu */
-    max-width: 600px; /* Setzt die maximale Breite des Formulars, um die gleiche Breite wie die Ergebnisliste zu haben */
-    margin: 20px 20px; /* Fügt Abstand oben, unten, links und rechts hinzu */
+    width: 600px; /* Breite des Formulars, um die gleiche Breite wie die Ergebnisliste zu haben */
+    margin: 20px auto; /* Fügt Abstand oben und unten hinzu, zentriert den Bereich horizontal */
     background: #fff; /* Setzt die Hintergrundfarbe des Formulars */
     padding: 15px; /* Fügt Innenabstand (Padding) zum Formular hinzu */
     border-radius: 8px; /* Rundet die Ecken des Formulars */

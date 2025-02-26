@@ -23,7 +23,7 @@
     
     // Überprüfung, ob die Verbindung erfolgreich war
     if ($mysqli->connect_errno) {
-        echo "Fehler beim Zugriff auf MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        echo "Fehler beim Zugriff auf MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error; //nochmal angucken
         exit(); // Skript beenden, falls Verbindung fehlschlägt
     }
 
@@ -33,7 +33,7 @@
     // Variablen aus der GET-Anfrage auslesen
     $suche = $_GET['suche'] ?? ''; // Suchbegriff aus dem URL-Parameter
     $sortierung = $_GET['sort_text'] ?? 'ASC'; // Standardmäßig aufsteigende Sortierung für Freitextsuche
-    $kategorie = $_GET['kategorie'] ?? '0'; // Ausgewählte Kategorie aus der URL übernehmen
+    $kategorie = $_GET['kategorie'] ?? ''; // Ausgewählte Kategorie aus der URL übernehmen
     $sortCat = $_GET['sort_category'] ?? 'ASC'; // Standardmäßig aufsteigende Sortierung für die Kategoriesuche
     ?>
 
@@ -62,7 +62,7 @@
             ?>
             <?php if ($result->num_rows > 0) { ?>
                 <ul>
-                <?php while ($row = $result->fetch_assoc()) { ?>
+                <?php while ($row = $result->fetch_assoc()) { ?> <!-- nochmal anschauen -->
                     <li><strong><?php echo($row['name']); ?></strong><?php echo number_format($row['preis'], 2, ',', '.'); ?> €</li>
                 <?php } ?>
                 </ul>
