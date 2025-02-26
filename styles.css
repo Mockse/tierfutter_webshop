@@ -11,7 +11,7 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    text-align: center;
+    text-align: right;
     padding: 20px;
     font-size: 24px;
 }
@@ -20,7 +20,8 @@ header {
 nav {
     background-color: #333;
     padding: 10px;
-    text-align: center;
+    text-decoration: underline;
+    text-align: right;
 }
 nav a {
     color: white;
