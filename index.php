@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Tierfutter-Webshop</h1> <!-- Hauptüberschrift der Seite -->
+        <h1><a href="index.php">Tierfutter Webshop</a></h1> <!-- Hauptüberschrift der Seite -->
     </header>
 
     <?php
@@ -38,11 +38,12 @@
     ?>
 
     <nav>
-        <a href="index.php">Startseite</a> <!-- Link zur Startseite -->
+        <a href="index.php">Produkte</a> <!-- Link zur Produktseite -->
     </nav>
 
     <main>
-        <h2>Freitextsuche</h2> <!-- Bereich für die Freitextsuche -->
+    <section>    
+    <h2>Freitextsuche</h2> <!-- Bereich für die Freitextsuche -->
         <form method="GET" action="">
             <input type="text" name="suche" placeholder="Hier Suchbegriff eingeben" value="<?php echo($suche); ?>"> <!-- Suchfeld -->
             <!-- Sortieroptionen für die Freitextsuche -->
@@ -61,7 +62,7 @@
             if ($result->num_rows > 0): ?>
                 <ul>
                     <?php while ($row = $result->fetch_assoc()): ?>
-                        <li><strong><?php echo($row['name']); ?></strong><br>Preis: <?php echo number_format($row['preis'], 2, ',', '.'); ?> €</li>
+                        <li><strong><?php echo($row['name']); ?></strong><?php echo number_format($row['preis'], 2, ',', '.'); ?> €</li>
                     <?php endwhile; ?>
                 </ul>
             <?php else: ?>
@@ -70,7 +71,9 @@
             $result->free(); // Speicher für das Ergebnis freigeben
             ?>
         <?php endif; ?>
-
+        </section>
+        <hr> <!-- Horizontale Linie zur Trennung der Bereiche -->
+        <section>
         <h2>Kategoriesuche</h2> <!-- Bereich für die Kategoriesuche -->
         <form method="GET" action="">
             <label for="kategorie">Kategorie:</label>
@@ -99,7 +102,7 @@
             // SQL-Abfrage für die Kategoriesuche
             $sqlCat = "SELECT name, preis FROM Produkt";
             if (!empty($kategorie)) {
-                $sqlCat .= " WHERE kategorie_id = " . (int)$kategorie;
+                $sqlCat .= " WHERE kategorie_id = " . $kategorie;
             }
             $sqlCat .= " ORDER BY preis $sortCat";
             $resultCat = $mysqli->query($sqlCat);
@@ -107,7 +110,7 @@
             if ($resultCat->num_rows > 0): ?>
                 <ul>
                     <?php while ($rowCat = $resultCat->fetch_assoc()): ?>
-                        <li><strong><?php echo($rowCat['name']); ?></strong><br>Preis: <?php echo number_format($rowCat['preis'], 2, ',', '.'); ?> €</li>
+                        <li><strong><?php echo($rowCat['name']); ?></strong><?php echo number_format($rowCat['preis'], 2, ',', '.'); ?> €</li>
                     <?php endwhile; ?>
                 </ul>
             <?php else: ?>
@@ -116,6 +119,7 @@
             $resultCat->free(); // Speicher für das Ergebnis freigeben
             ?>
         <?php endif; ?>
+        </section>
     </main>
 </body>
 </html>

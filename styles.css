@@ -1,138 +1,143 @@
 /* Allgemeine Stile */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: 'Comic Sans MS', 'Comic Sans'; /* Setzt die Schriftart der gesamten Seite */
+    margin: 0; /* Entfernt die Standardabstände am Rand des Körpers */
+    padding: 0; /* Entfernt die Standardabstände im Körper */
+    background-color: #f5f5f5; /* Setzt die Hintergrundfarbe der Seite */
+    color: #333; /* Setzt die Textfarbe */
 }
 
 /* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: left;
-    padding: 25px;
-    font-size: 24px;
+    background-color: #4CAF50; /* Setzt die Hintergrundfarbe des Headers */
+    color: whitesmoke; /* Setzt die Textfarbe im Header */
+    text-align: center; /* Zentriert den Text im Header */
+    padding: 25px; /* Fügt Innenabstand (Padding) zum Header hinzu */
+    font-size: 24px; /* Setzt die Schriftgröße im Header */
+}
+
+/* Header Link Styling */
+header a {
+    color: whitesmoke; /* Setzt die Schriftfarbe des Links im Header */
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+}
+
+header a:visited {
+    color: whitesmoke; /* Setzt die Schriftfarbe des Links im Header, auch wenn er besucht wurde */
 }
 
 /* Navigation */
 nav {
-    background-color: #333;
-    padding: 10px;
-    text-decoration: underline;
-    text-align: left;
+    background-color: #333; /* Setzt die Hintergrundfarbe der Navigation */
+    padding: 10px; /* Fügt Innenabstand (Padding) zur Navigation hinzu */
+    text-decoration: underline; /* Unterstreicht den Text der Navigation */
+    text-align: center; /* Zentriert den Text in der Navigation */
 }
+
 nav a {
-    color: white;
-    text-decoration: underline;
-    padding: 10px 20px;
-    display: inline-block;
+    color: white; /* Setzt die Textfarbe der Links in der Navigation */
+    text-decoration: underline; /* Unterstreicht die Links in der Navigation */
+    padding: 10px 20px; /* Fügt Innenabstand (Padding) zu den Links hinzu */
+    display: inline-block; /* Setzt die Links als Inline-Block-Elemente */
 }
+
 nav a:hover {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Setzt die Hintergrundfarbe der Links beim Hover-Effekt */
 }
 
 /* Hauptbereich */
 main {
-    max-width: 1200px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Setzt die maximale Breite des Hauptbereichs */
+    margin: 20px auto; /* Fügt Abstand oben und unten hinzu, zentriert den Hauptbereich horizontal */
+    background: white; /* Setzt die Hintergrundfarbe des Hauptbereichs */
+    padding: 20px; /* Fügt Innenabstand (Padding) zum Hauptbereich hinzu */
+    border-radius: 5px; /* Rundet die Ecken des Hauptbereichs */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fügt einen Schlagschatten zum Hauptbereich hinzu */
 }
 
 /* Ergebnisliste */
 section {
-    margin-top: 20px;
-    max-width: 600px;
-    margin-left: 20px;
+    margin-top: 20px; /* Fügt Abstand oben hinzu */
+    max-width: 600px; /* Setzt die maximale Breite des Abschnitts */
+    margin-left: 20px; /* Fügt Abstand links hinzu */
 }
 
 section ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    list-style: none; /* Entfernt die Standard-Aufzählungszeichen */
+    padding: 0; /* Entfernt die Standardabstände im Listenbereich */
+    display: flex; /* Setzt das Layout auf Flexbox */
+    flex-direction: column; /* Ordnet die Listenelemente in einer Spalte an */
+    gap: 15px; /* Fügt Abstand zwischen den Listenelementen hinzu */
 }
 
 section ul li {
-    background: linear-gradient(135deg, #ffffff, #f9f9f9);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.2s ease-in-out;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Setzt einen Farbverlauf als Hintergrund */
+    padding: 15px; /* Fügt Innenabstand (Padding) zu den Listenelementen hinzu */
+    border-radius: 8px; /* Rundet die Ecken der Listenelemente */
+    border: 1px solid #ddd; /* Setzt eine graue Rahmenfarbe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Fügt einen leichten Schlagschatten hinzu */
+    display: flex; /* Setzt das Layout auf Flexbox */
+    justify-content: space-between; /* Verteilte die Listenelemente gleichmäßig */
+    align-items: center; /* Zentriert die Listenelemente vertikal */
 }
 
 section ul li:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02); /* Vergrößert die Listenelemente leicht beim Hover-Effekt */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Vergrößert den Schlagschatten beim Hover-Effekt */
 }
 
 section ul li strong {
-    font-size: 18px;
-    color: #333;
-}
-
-section ul li span {
-    font-size: 16px;
-    color: #4CAF50;
-    font-weight: bold;
+    font-size: 18px; /* Setzt die Schriftgröße des hervorgehobenen Texts */
+    color: #333; /* Setzt die Textfarbe des hervorgehobenen Texts */
 }
 
 /* Formulare */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    margin: 20px 20px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Setzt das Layout auf Flexbox */
+    flex-direction: column; /* Ordnet die Formularelemente in einer Spalte an */
+    gap: 10px; /* Fügt Abstand zwischen den Formularelementen hinzu */
+    max-width: 600px; /* Setzt die maximale Breite des Formulars, um die gleiche Breite wie die Ergebnisliste zu haben */
+    margin: 20px 20px; /* Fügt Abstand oben, unten, links und rechts hinzu */
+    background: #fff; /* Setzt die Hintergrundfarbe des Formulars */
+    padding: 15px; /* Fügt Innenabstand (Padding) zum Formular hinzu */
+    border-radius: 8px; /* Rundet die Ecken des Formulars */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Fügt einen leichten Schlagschatten hinzu */
+    box-sizing: border-box; /* Bezieht Padding und Rahmen in die Breite der Eingabefelder ein */
 }
 
 form input[type="text"],
 form select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
+    width: calc(100% - 22px); /* Setzt die Breite der Eingabefelder */
+    padding: 10px; /* Fügt Innenabstand (Padding) zu den Eingabefeldern hinzu */
+    border: 1px solid #ccc; /* Setzt eine graue Rahmenfarbe */
+    border-radius: 5px; /* Rundet die Ecken der Eingabefelder */
+    font-size: 16px; /* Setzt die Schriftgröße der Eingabefelder */
+    box-sizing: border-box; /* Bezieht Padding und Rahmen in die Breite der Eingabefelder ein */
 }
 
 form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+    background-color: #4CAF50; /* Setzt die Hintergrundfarbe des Buttons */
+    color: white; /* Setzt die Textfarbe des Buttons */
+    border: none; /* Entfernt den Rahmen des Buttons */
+    padding: 10px; /* Fügt Innenabstand (Padding) zum Button hinzu */
+    cursor: pointer; /* Zeigt einen Zeiger an, wenn der Button angeklickt werden kann */
+    font-size: 16px; /* Setzt die Schriftgröße des Buttons */
+    border-radius: 5px; /* Rundet die Ecken des Buttons */
 }
 
 form button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Ändert die Hintergrundfarbe des Buttons beim Hover-Effekt */
 }
 
 /* Überschriftenanpassung */
 h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 22px; /* Setzt die Schriftgröße der h2-Überschrift */
+    margin-bottom: 10px; /* Fügt Abstand unter der h2-Überschrift hinzu */
 }
 
 h3 {
-    font-size: 18px;
-    color: #555;
-    display: flex;
-    align-items: center;
+    font-size: 18px; /* Setzt die Schriftgröße der h3-Überschrift */
+    color: #555; /* Setzt die Textfarbe der h3-Überschrift */
+    display: flex; /* Setzt das Layout auf Flexbox */
+    align-items: center; /* Zentriert die Elemente der h3-Überschrift vertikal */
 }
