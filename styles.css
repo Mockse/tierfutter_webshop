@@ -35,7 +35,7 @@ nav {
 }
 
 nav a {
-    color: white; /* Setzt die Textfarbe der Links in der Navigation */
+    color: whitesmoke; /* Setzt die Textfarbe der Links in der Navigation */
     text-decoration: underline; /* Unterstreicht die Links in der Navigation */
     padding: 10px 20px; /* Fügt Innenabstand (Padding) zu den Links hinzu */
     display: inline-block; /* Setzt die Links als Inline-Block-Elemente */
@@ -49,7 +49,7 @@ nav a:hover {
 main {
     max-width: 1200px; /* Setzt die maximale Breite des Hauptbereichs */
     margin: 20px auto; /* Fügt Abstand oben und unten hinzu, zentriert den Hauptbereich horizontal */
-    background: white; /* Setzt die Hintergrundfarbe des Hauptbereichs */
+    background: whitesmoke; /* Setzt die Hintergrundfarbe des Hauptbereichs */
     padding: 20px; /* Fügt Innenabstand (Padding) zum Hauptbereich hinzu */
     border-radius: 5px; /* Rundet die Ecken des Hauptbereichs */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Fügt einen Schlagschatten zum Hauptbereich hinzu */
